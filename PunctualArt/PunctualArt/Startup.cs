@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 
 namespace PunctualArt
 {
@@ -38,6 +37,14 @@ namespace PunctualArt
             }
 
             app.UseStaticFiles();
+
+            // This will add "Styles" as another valid static content location
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                     Path.Combine(Directory.GetCurrentDirectory(), @"Styles")),
+                RequestPath = new PathString("/Styles")
+            });
 
             app.UseMvc(routes =>
             {
