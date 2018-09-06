@@ -1,13 +1,4 @@
-﻿body {
-    background: linear-gradient(327deg, #313131, #777777, #bfb1d5, #adddcf, #abe1fd, #fed1be, #f0e0a2, #e8e7e5, #ffffff);
-    background-size: 1800% 1800%;
-    -webkit-animation: AnimationName 45s ease infinite;
-    -moz-animation: AnimationName 45s ease infinite;
-    -o-animation: AnimationName 45s ease infinite;
-    animation: AnimationName 45s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
+﻿@-webkit-keyframes AnimationName {
     0% {
         background-position: 84% 0%
     }
@@ -61,4 +52,19 @@
     100% {
         background-position: 84% 0%
     }
+}
+
+body {
+    background: linear-gradient(327deg, #313131, #777777, #bfb1dd, #adddcd, #abe1fd, #fed1be, #f0e0a2, #e8e7e5, #ffffff);
+    background-size: 1800% 1800%;
+    -webkit-animation: AnimationName 45s ease infinite;
+    -moz-animation: AnimationName 45s ease infinite;
+    -o-animation: AnimationName 45s ease infinite;
+    animation: AnimationName 45s ease infinite;
+}
+
+#form-landing {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
 }
