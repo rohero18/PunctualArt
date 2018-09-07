@@ -46,6 +46,14 @@ namespace PunctualArt
                 RequestPath = new PathString("/Styles")
             });
 
+            // This will add "Scripts" as another valid static content location
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                     Path.Combine(Directory.GetCurrentDirectory(), @"Scripts")),
+                RequestPath = new PathString("/Scripts")
+            });
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

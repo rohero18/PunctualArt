@@ -1,10 +1,13 @@
 ﻿<head>
     @{
         ViewData["Title"] = "PunctualArt - LandingPage";
-        
+
     }
     @section Styles{
         <link rel="Stylesheet" href="@Href("~/Styles/Landing.css")" />
+    }
+    @section Scripts{
+        <script type="text/javascript" src="@Url.Content("Scripts/LandingJS.js")"></script>
     }
 
 </head>
@@ -12,4 +15,5 @@
     <div class="landing-main-div">
         hola
     </div>
+
 </body>
